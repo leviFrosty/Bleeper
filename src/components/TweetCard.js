@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function TweetCard({ tweet, userObj }) {
-  const handleOptions = () => {
-    if (userObj.uid === tweet.creatorId) {
+export default function TweetCard({ tweet, isOwner, handleDelete }) {
+  const ownerOptions = () => {
+    if (isOwner) {
       return (
         <div>
           <button>Edit</button>
-          <button>Delete</button>
+          <button onClick={handleDelete}>Delete</button>
         </div>
       );
     }
@@ -16,7 +16,7 @@ export default function TweetCard({ tweet, userObj }) {
     <div>
       {tweet.text}
       <img src={tweet.userPhotoURL} alt={tweet.displayName} />
-      {handleOptions()}
+      {ownerOptions()}
     </div>
   );
 }

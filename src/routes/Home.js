@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
-import { collection, addDoc, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+} from "firebase/firestore";
 import { db } from "fbInstance";
 import TweetCard from "../components/TweetCard";
 
@@ -45,6 +51,10 @@ export default function Home({ userObj }) {
     });
   }, []);
 
+  const handleDelete = async (tweetId) => {
+    await deleteDoc(doc(db, "tweets", tweetId));
+  };
+
   return (
     <div className="home">
       <form onSubmit={onSubmit}>
@@ -59,7 +69,14 @@ export default function Home({ userObj }) {
       </form>
       <div>
         {tweets.map((tweet) => {
-          return <TweetCard key={tweet.id} tweet={tweet} userObj={userObj} />;
+          return (
+            <TweetCard
+              key={tweet.id}
+              tweet={tweet}
+              isOwner={userObj.uid === tweet.creatorId}
+              handleDelete={handleDelete}
+            />
+          );
         })}
       </div>
     </div>
