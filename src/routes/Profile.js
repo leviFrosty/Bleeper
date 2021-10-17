@@ -6,11 +6,12 @@ import { useHistory } from "react-router-dom";
 export default function Profile() {
   let history = useHistory();
   const onSignoutClick = () => {
-    signOut(auth)
-      .then(history.push("/"))
-      .catch((error) => {
-        console.log(error);
-      });
+    signOut(auth).catch((error) => {
+      console.log(error);
+    });
+    console.log("before", history);
+    history.push("/");
+    console.log("after", history);
   };
 
   return (

@@ -4,30 +4,25 @@ import Home from "routes/Home";
 import NavBar from "./NavBar";
 import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
-import {
-  HashRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
       {isLoggedIn && <NavBar />}
       <Switch>
         {isLoggedIn ? (
           <React.Fragment>
-            <Route exact path="/not-found" component={NotFound} />
-            <Route exact path="/" component={Home} />
             <Route exact path="/profile" component={Profile} />
-            <Redirect from="*" to="/not-found" />
+            <Route exact path="/not-found" component={NotFound} />
+            <Route exact path="/">
+              <Home userObj={userObj} />
+            </Route>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <Route exact path="/not-found" component={NotFound} />
             <Route exact path="/" component={Auth} />
-            <Redirect from="*" to="/not-found" />
           </React.Fragment>
         )}
       </Switch>

@@ -34,17 +34,14 @@ export default function Auth() {
           const user = userCredential.user;
           const stringedUserCred = JSON.stringify(user);
           window.localStorage.setItem("userCredential", stringedUserCred);
-          console.log(user);
         })
         .catch((error) => {
           setError(error);
         });
     } else {
-      await signInWithEmailAndPassword(auth, email, password).then(
-        (userCredential) => {
-          const user = userCredential.user;
-        }
-      );
+      await signInWithEmailAndPassword(auth, email, password).catch((error) => {
+        console.log(error);
+      });
     }
   };
 
