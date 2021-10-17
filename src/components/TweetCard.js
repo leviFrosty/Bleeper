@@ -12,13 +12,13 @@ export default function TweetCard({ tweet, isOwner }) {
       return (
         <div>
           {editing ? (
-            <button onClick={onCancelClick}>Cancel</button>
+            <button onClick={toggleEditing}>Cancel</button>
           ) : (
-            <button onClick={onEditClick}>Edit</button>
+            <button onClick={toggleEditing}>Edit</button>
           )}
 
           {editing ? (
-            <button onClick={onSaveClick}>Save</button>
+            <button onClick={onSave}>Save</button>
           ) : (
             <button onClick={onDeleteClick}>Delete</button>
           )}
@@ -27,16 +27,12 @@ export default function TweetCard({ tweet, isOwner }) {
     }
   };
 
-  const onEditClick = () => {
-    setEditing(true);
+  const toggleEditing = () => {
+    setEditing((prev) => !prev);
   };
 
-  const onCancelClick = () => {
-    setEditing(false);
-  };
-
-  const onSaveClick = async () => {
-    console.log("saved.");
+  const onSave = async (event) => {
+    event.preventDefault();
     await setDoc(
       doc(db, "tweets", tweet.id),
       {
@@ -44,7 +40,7 @@ export default function TweetCard({ tweet, isOwner }) {
       },
       { merge: true }
     );
-    setEditing(false);
+    toggleEditing();
   };
 
   const onDeleteClick = async () => {
@@ -65,9 +61,16 @@ export default function TweetCard({ tweet, isOwner }) {
     <div>
       {editing ? (
         <>
-          <input value={newTweet} required maxLength={140} onChange={onEdit} />
-          <span>{newTweet.length}</span>
-          <span>/140</span>
+          <form onSubmit={onSave}>
+            <input
+              value={newTweet}
+              required
+              maxLength={140}
+              onChange={onEdit}
+            />
+            <span>{newTweet.length}</span>
+            <span>/140</span>
+          </form>
         </>
       ) : (
         <h3>{tweet.text}</h3>
