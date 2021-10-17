@@ -10,8 +10,8 @@ import {
 } from "firebase/auth";
 
 export default function Auth() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [newAcccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
 
