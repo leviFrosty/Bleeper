@@ -7,7 +7,7 @@
   - Github Oauth
 - 🪄 Responsive Design
 - 🧭 Routing / Navigation
-- 💾 Cloud based real-time database
+- ☁️ Real-time Cloud Based Data!
 ##### Made with:
 - React
 - Jest
