@@ -10,7 +10,6 @@ export default function NavBar() {
         </div>
         <div className="nav-end">
           <Link to="/profile">My profile</Link>
-          <button onClick={() => {}}>Log out</button>
         </div>
       </div>
     </div>
