@@ -8,7 +8,7 @@
 - 🪄 Responsive Design
 - 🧭 Routing / Navigation
 - 💾 Cloud based real-time database
-###### Made with:
+##### Made with:
 - React
 - Jest
 - Firebase
