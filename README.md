@@ -1,6 +1,6 @@
 # Twitter clone with editable tweets!
 
-## Features:
+#### Features:
 - 🔑 Authentication 
   - Email/Password
   - Google
@@ -8,7 +8,7 @@
 - 🪄 Responsive Design
 - 🧭 Routing / Navigation
 - 💾 Cloud based real-time database
-### Made with:
+###### Made with:
 - React
 - Jest
 - Firebase
