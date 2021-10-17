@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, onSnapshot } from "firebase/firestore";
 import { db } from "fbInstance";
 import TweetCard from "../components/TweetCard";
 
@@ -8,20 +8,13 @@ export default function Home({ userObj }) {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
 
-  useEffect(() => {
-    getTweets();
-  }, []);
-
-  const getTweets = async () => {
-    const tweetsCollection = await collection(db, "tweets");
-    const docs = await getDocs(tweetsCollection);
-    docs.forEach((doc) => {
-      const tweetsObject = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      setTweets((prev) => [tweetsObject, ...prev]);
-    });
+  const tweetData = {
+    text: tweet,
+    displayName: userObj.displayName,
+    email: userObj.email,
+    creatorId: userObj.uid,
+    userPhotoURL: userObj.photoURL,
+    createdAt: Date.now(),
   };
 
   const onChange = (event) => {
@@ -29,15 +22,6 @@ export default function Home({ userObj }) {
       target: { value },
     } = event;
     setTweet(value);
-  };
-
-  const tweetData = {
-    text: tweet,
-    displayName: userObj.displayName,
-    email: userObj.email,
-    userId: userObj.uid,
-    userPhotoURL: userObj.photoURL,
-    createdAt: Date.now(),
   };
 
   const onSubmit = async (event) => {
@@ -49,6 +33,17 @@ export default function Home({ userObj }) {
     });
     setTweet("");
   };
+
+  useEffect(() => {
+    const dbCollection = collection(db, "tweets");
+    onSnapshot(dbCollection, (snapshot) => {
+      const tweetArray = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setTweets(tweetArray);
+    });
+  }, []);
 
   return (
     <div className="home">
@@ -64,7 +59,7 @@ export default function Home({ userObj }) {
       </form>
       <div>
         {tweets.map((tweet) => {
-          return <TweetCard tweet={tweet} />;
+          return <TweetCard key={tweet.id} tweet={tweet} userObj={userObj} />;
         })}
       </div>
     </div>

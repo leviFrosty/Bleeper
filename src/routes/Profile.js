@@ -9,9 +9,7 @@ export default function Profile() {
     signOut(auth).catch((error) => {
       console.log(error);
     });
-    console.log("before", history);
     history.push("/");
-    console.log("after", history);
   };
 
   return (
