@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import { collection, addDoc, onSnapshot } from "firebase/firestore";
+import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { db } from "fbInstance";
+import { v4 as uuidV4 } from "uuid";
 import TweetCard from "../components/TweetCard";
+import { storage } from "../fbInstance";
 
 export default function Home({ userObj }) {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
-  const [attachment, setAttachment] = useState();
+  const [attachment, setAttachment] = useState("");
   const [processing, setProcessing] = useState(false);
 
   // console.log(userObj);
@@ -30,12 +33,25 @@ export default function Home({ userObj }) {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    const imageInput = document.querySelector(".tweetForm-imageInput");
+    let attachmentURL = "";
+    if (attachment !== "") {
+      const attachmentRef = await ref(storage, `${userObj.uid}/${uuidV4()}`);
+      await uploadString(attachmentRef, attachment, "data_url");
+      attachmentURL = await getDownloadURL(attachmentRef);
+    }
     const dbCollection = collection(db, "tweets");
-    await addDoc(dbCollection, tweetData).catch((error) => {
+    const newTweet = {
+      attachmentURL,
+      ...tweetData,
+    };
+    await addDoc(dbCollection, newTweet).catch((error) => {
       alert("Error adding document. Check console for more information");
       console.log(error);
     });
     setTweet("");
+    imageInput.value = null;
+    setAttachment("");
   };
 
   const onAddAttachment = async (event) => {
@@ -85,6 +101,8 @@ export default function Home({ userObj }) {
           placeholder="What's on your mind?"
           value={tweet}
         />
+        <span>{tweet.length}</span>
+        <span>/140</span>
         <input
           className="tweetForm-imageInput"
           type="file"
@@ -105,6 +123,7 @@ export default function Home({ userObj }) {
         {tweets.map((tweet) => {
           return (
             <TweetCard
+              attachmentURL={tweet.attachmentURL}
               key={tweet.id}
               tweet={tweet}
               isOwner={userObj.uid === tweet.creatorId}

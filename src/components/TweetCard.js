@@ -2,8 +2,11 @@ import React from "react";
 import { deleteDoc, setDoc, doc } from "firebase/firestore";
 import { db } from "fbInstance";
 import { useState } from "react/cjs/react.development";
+import { deleteObject } from "@firebase/storage";
+import { ref } from "firebase/storage";
+import { storage } from "../fbInstance";
 
-export default function TweetCard({ tweet, isOwner }) {
+export default function TweetCard({ tweet, isOwner, attachmentURL }) {
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweet.text);
 
@@ -47,6 +50,11 @@ export default function TweetCard({ tweet, isOwner }) {
     const ok = window.confirm("Are you sure you want to delete this tweet?");
     if (ok) {
       await deleteDoc(doc(db, "tweets", tweet.id));
+      if (attachmentURL !== "") {
+        await deleteObject(ref(storage, attachmentURL)).catch((error) => {
+          console.log(error);
+        });
+      }
     }
   };
 
@@ -59,6 +67,12 @@ export default function TweetCard({ tweet, isOwner }) {
 
   return (
     <div>
+      {attachmentURL && (
+        <div className="attachment">
+          <span>Attachment:</span>
+          <img src={attachmentURL} alt="" />
+        </div>
+      )}
       {editing ? (
         <>
           <form onSubmit={onSave}>
