@@ -33,7 +33,13 @@ export default function Profile({ userObj }) {
     } else {
       snapshot.forEach((docSnapshot) => {
         const data = docSnapshot.data();
-        tweetArray.push(data);
+        tweetArray = [
+          ...tweetArray,
+          {
+            id: docSnapshot.id,
+            ...data,
+          },
+        ];
         setTweets(tweetArray);
       });
     }
@@ -41,7 +47,6 @@ export default function Profile({ userObj }) {
 
   useEffect(() => {
     getProfileTweets();
-    console.log("mounted");
   }, []);
 
   return (
