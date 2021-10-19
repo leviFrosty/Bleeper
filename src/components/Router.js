@@ -6,7 +6,7 @@ import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
-const AppRouter = ({ isLoggedIn, userObj }) => {
+const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
     <Router>
       {isLoggedIn && <NavBar userObj={userObj} />}
@@ -14,7 +14,10 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
         {isLoggedIn ? (
           <React.Fragment>
             <Route exact path="/profile">
-              <Profile userObj={userObj} />
+              <Profile
+                userObj={userObj}
+                refreshDisplayName={refreshDisplayName}
+              />
             </Route>
             <Route exact path="/not-found" component={NotFound} />
             <Route exact path="/">

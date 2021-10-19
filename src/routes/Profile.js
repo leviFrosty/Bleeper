@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { signOut } from "firebase/auth";
+import { signOut, updateProfile } from "firebase/auth";
 import { collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { auth, db } from "fbInstance";
 import { useHistory } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import TweetCard from "components/TweetCard";
 
-export default function Profile({ userObj }) {
+export default function Profile({ userObj, refreshDisplayName }) {
   const [tweets, setTweets] = useState([]);
   const [newDisplayName, setNewDisplayName] = useState("");
   const [isEditingDisplayName, setIsEditingDisplayName] = useState(false);
@@ -47,10 +47,11 @@ export default function Profile({ userObj }) {
     }
   };
 
-  const onDisplayNameSubmit = (event) => {
+  const onDisplayNameSubmit = async (event) => {
     event.preventDefault();
-    console.log(newDisplayName);
+    await updateProfile(userObj, { displayName: newDisplayName });
     setIsEditingDisplayName(false);
+    refreshDisplayName();
   };
 
   const onDisplayNameChange = (event) => {
@@ -75,20 +76,20 @@ export default function Profile({ userObj }) {
           <div>
             <h1>{userObj.displayName}</h1>
             <span onClick={onDisplayNameEditToggle}>
-              <i class="fas fa-edit"></i>
+              <i className="fas fa-edit"></i>
             </span>
           </div>
           {isEditingDisplayName && (
             <div className="visually-hidden modal">
-              <h2>Display name:</h2>
+              <h2>Name</h2>
               <form onSubmit={onDisplayNameSubmit}>
                 <input
                   required
                   maxLength={29}
                   type="text"
-                  placeholder="Enter new name"
                   onChange={onDisplayNameChange}
                 />
+                <p>Your name how it will appear to other users.</p>
                 <button type="submit">Save</button>
               </form>
             </div>
