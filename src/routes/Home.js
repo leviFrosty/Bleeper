@@ -18,7 +18,6 @@ export default function Home({ userObj }) {
 
   const tweetData = {
     text: tweet,
-    email: userObj.email,
     creatorId: userObj.uid,
     userPhotoURL: userObj.photoURL,
     createdAt: Date.now(),

@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import NewUser from "routes/NewUser";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
@@ -13,6 +14,12 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
       <Switch>
         {isLoggedIn ? (
           <React.Fragment>
+            <Route exact path="/new-user">
+              <NewUser
+                userObj={userObj}
+                refreshDisplayName={refreshDisplayName}
+              />
+            </Route>
             <Route exact path="/profile">
               <Profile
                 userObj={userObj}

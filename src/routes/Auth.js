@@ -8,12 +8,14 @@ import {
   GithubAuthProvider,
   GoogleAuthProvider,
 } from "firebase/auth";
+import { useHistory } from "react-router-dom";
 
 export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAcccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
+  let history = useHistory();
 
   const onChange = (event) => {
     const {
@@ -34,6 +36,9 @@ export default function Auth() {
           const user = userCredential.user;
           const stringedUserCred = JSON.stringify(user);
           window.localStorage.setItem("userCredential", stringedUserCred);
+
+          history.push("/new-user");
+          console.log("going to new user page");
         })
         .catch((error) => {
           setError(error);
