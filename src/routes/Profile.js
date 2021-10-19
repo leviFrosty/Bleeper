@@ -8,6 +8,8 @@ import TweetCard from "components/TweetCard";
 
 export default function Profile({ userObj }) {
   const [tweets, setTweets] = useState([]);
+  const [newDisplayName, setNewDisplayName] = useState("");
+  const [isEditingDisplayName, setIsEditingDisplayName] = useState(false);
   let history = useHistory();
   const onSignoutClick = () => {
     signOut(auth).catch((error) => {
@@ -45,13 +47,55 @@ export default function Profile({ userObj }) {
     }
   };
 
+  const onDisplayNameSubmit = (event) => {
+    event.preventDefault();
+    console.log(newDisplayName);
+    setIsEditingDisplayName(false);
+  };
+
+  const onDisplayNameChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setNewDisplayName(value);
+  };
+
+  const onDisplayNameEditToggle = () => {
+    setIsEditingDisplayName(!isEditingDisplayName);
+  };
+
   useEffect(() => {
     getProfileTweets();
   }, []);
 
   return (
     <div className="profile">
-      <div>My Profile</div>
+      <div className="profile-options">
+        <div className="profile-displayName">
+          <div>
+            <h1>{userObj.displayName}</h1>
+            <span onClick={onDisplayNameEditToggle}>
+              <i class="fas fa-edit"></i>
+            </span>
+          </div>
+          {isEditingDisplayName && (
+            <div className="visually-hidden modal">
+              <h2>Display name:</h2>
+              <form onSubmit={onDisplayNameSubmit}>
+                <input
+                  required
+                  maxLength={29}
+                  type="text"
+                  placeholder="Enter new name"
+                  onChange={onDisplayNameChange}
+                />
+                <button type="submit">Save</button>
+              </form>
+            </div>
+          )}
+        </div>
+        <button onClick={onSignoutClick}>Sign out</button>
+      </div>
       {tweets.map((tweet) => {
         return (
           <TweetCard
@@ -62,7 +106,6 @@ export default function Profile({ userObj }) {
           />
         );
       })}
-      <button onClick={onSignoutClick}>Sign out</button>
     </div>
   );
 }
