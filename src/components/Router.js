@@ -9,11 +9,13 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
-      {isLoggedIn && <NavBar />}
+      {isLoggedIn && <NavBar userObj={userObj} />}
       <Switch>
         {isLoggedIn ? (
           <React.Fragment>
-            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile">
+              <Profile userObj={userObj} />
+            </Route>
             <Route exact path="/not-found" component={NotFound} />
             <Route exact path="/">
               <Home userObj={userObj} />
