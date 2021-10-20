@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useHistory } from "react-router-dom";
+import logo from "images/logo.webp";
 
 export default function Auth() {
   const [email, setEmail] = useState("");
@@ -74,47 +75,57 @@ export default function Auth() {
 
   return (
     <div>
-      <div>
-        <h1>Please sign in</h1>
+      <div className="welcome">
+        <h1 className="welcome-title">
+          Bleeper
+          <span>
+            <img src={logo} alt="" />
+          </span>
+        </h1>
       </div>
-      <div className="signin">
-        <div className="signin-form">
-          <form onSubmit={onSubmit}>
-            <input
-              name="email"
-              className="input"
-              required
-              placeholder="email"
-              type="email"
-              value={email}
-              onChange={onChange}
-            />
-            <input
-              name="password"
-              className="input"
-              required
-              placeholder="password"
-              type="password"
-              value={password}
-              onChange={onChange}
-            />
-            <input
-              type="submit"
-              value={newAcccount ? "Create account" : "Sign in"}
-            />
-            {error ? <div>{error.message}</div> : null}
-          </form>
-          <button onClick={toggleNewAccount}>
-            {newAcccount ? "Sign in?" : "Create account"}
-          </button>
+      <div className="signin__container">
+        <div className="signin-title">
+          <h2>Please sign in</h2>
         </div>
-        <div className="sigin-thirdParties">
-          <button name="google" onClick={onSocialSignin}>
-            Sign in with Google
-          </button>
-          <button name="github" onClick={onSocialSignin}>
-            Sign in with GitHub
-          </button>
+        <div className="signin">
+          <div className="signin-form">
+            <form onSubmit={onSubmit}>
+              <input
+                name="email"
+                className="input"
+                required
+                placeholder="email"
+                type="email"
+                value={email}
+                onChange={onChange}
+              />
+              <input
+                name="password"
+                className="input"
+                required
+                placeholder="password"
+                type="password"
+                value={password}
+                onChange={onChange}
+              />
+              <input
+                type="submit"
+                value={newAcccount ? "Create account" : "Sign in"}
+              />
+              {error ? <div>{error.message}</div> : null}
+            </form>
+            <button onClick={toggleNewAccount}>
+              {newAcccount ? "Sign in?" : "Create account"}
+            </button>
+          </div>
+          <div className="sigin-thirdParties">
+            <button name="google" onClick={onSocialSignin}>
+              Sign in with Google
+            </button>
+            <button name="github" onClick={onSocialSignin}>
+              Sign in with GitHub
+            </button>
+          </div>
         </div>
       </div>
     </div>
