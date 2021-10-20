@@ -1,13 +1,13 @@
 # Twitter clone with editable tweets!
 
 #### Features:
-- 🔑 Authentication 
+- 🔑 Authentication
   - Email/Password
   - Google
   - Github Oauth
-- 🪄 Responsive Design
-- 🧭 Routing / Navigation
 - ☁️ Real-time Cloud Based Data
+- 📸 Image attachments!
+- 🧭 Routing / Navigation
 - 🏷️ Profile page
 - ➕👓✏️✖️ CRUD operations
 ##### Made with:
