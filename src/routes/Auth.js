@@ -45,7 +45,7 @@ export default function Auth() {
         });
     } else {
       await signInWithEmailAndPassword(auth, email, password).catch((error) => {
-        console.log(error);
+        setError(error);
       });
     }
   };

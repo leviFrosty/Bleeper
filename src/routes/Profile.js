@@ -97,16 +97,19 @@ export default function Profile({ userObj, refreshDisplayName }) {
         </div>
         <button onClick={onSignoutClick}>Sign out</button>
       </div>
-      {tweets.map((tweet) => {
-        return (
-          <TweetCard
-            attachmentURL={tweet.attachmentURL}
-            key={tweet.id}
-            tweet={tweet}
-            isOwner={userObj.uid === tweet.creatorId}
-          />
-        );
-      })}
+      <div className="profile-tweets">
+        <h2>Your tweets:</h2>
+        {tweets.map((tweet) => {
+          return (
+            <TweetCard
+              attachmentURL={tweet.attachmentURL}
+              key={tweet.id}
+              tweet={tweet}
+              isOwner={userObj.uid === tweet.creatorId}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

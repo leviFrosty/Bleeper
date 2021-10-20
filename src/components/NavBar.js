@@ -6,10 +6,15 @@ export default function NavBar({ userObj }) {
     <div className="nav">
       <div className="nav-container">
         <div className="nav-start">
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <i class="fas fa-home"></i>
+          </Link>
         </div>
         <div className="nav-end">
-          <Link to="/profile">{userObj.displayName} Profile</Link>
+          <Link to="/profile">
+            {userObj.displayName} <i class="fas fa-address-card"></i>
+          </Link>
+          {userObj.photoURL && <img src={userObj.photoURL} alt="" />}
         </div>
       </div>
     </div>
