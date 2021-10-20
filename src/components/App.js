@@ -13,7 +13,6 @@ function App() {
     setUserObj({});
     const user = auth.currentUser;
     setUserObj(user);
-    console.log("refreshed");
   };
 
   useEffect(() => {

@@ -13,11 +13,11 @@ export default function Home({ userObj }) {
   const [attachment, setAttachment] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  // console.log(userObj);
   // TODO: Add profile creation screen after signin to fill out displayname, img, etc.
 
   const tweetData = {
     text: tweet,
+    creatorDisplayName: userObj.displayName,
     creatorId: userObj.uid,
     userPhotoURL: userObj.photoURL,
     createdAt: Date.now(),

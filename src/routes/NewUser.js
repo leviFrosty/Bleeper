@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { updateProfile } from "@firebase/auth";
 import { useHistory } from "react-router-dom";
+import urlencode from "urlencode";
 
 export default function NewUser({ userObj, refreshDisplayName }) {
   const [newDisplayName, setNewDisplayName] = useState("");
@@ -16,6 +17,12 @@ export default function NewUser({ userObj, refreshDisplayName }) {
         refreshDisplayName();
         history.push("/");
       });
+    if (userObj.photoURL === null) {
+      const encodedDisplayName = urlencode.encode(newDisplayName);
+      await updateProfile(userObj, {
+        photoURL: `https://ui-avatars.com/api/?name=${encodedDisplayName}?size=128?format=svg?bold=true`,
+      });
+    }
   };
 
   const onDisplayNameChange = (event) => {

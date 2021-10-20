@@ -88,9 +88,14 @@ export default function TweetCard({ tweet, isOwner, attachmentURL }) {
           </form>
         </>
       ) : (
-        <h3>{tweet.text}</h3>
+        <div>
+          <h3>{tweet.text}</h3>
+        </div>
       )}
-      <img src={tweet.userPhotoURL} alt={tweet.displayName} />
+      <div className="tweet-user">
+        <h4>{tweet.creatorDisplayName}</h4>
+        <img src={tweet.userPhotoURL} alt={tweet.displayName} />
+      </div>
       {ownerOptions()}
     </div>
   );
