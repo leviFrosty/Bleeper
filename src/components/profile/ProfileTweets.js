@@ -1,7 +1,7 @@
 import { collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { db } from "fbInstance";
 import { useState } from "react/cjs/react.development";
-import TweetCard from "components/TweetCard";
+import TweetCard from "components/home/TweetCard";
 import React, { useEffect } from "react";
 
 export default function ProfileTweets({ userObj }) {

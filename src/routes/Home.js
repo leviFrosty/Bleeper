@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "fbInstance";
-import TweetCard from "../components/TweetCard";
-import TweetForm from "components/TweetForm";
+import TweetCard from "../components/home/TweetCard";
+import TweetForm from "components/home/TweetForm";
 
 export default function Home({ userObj }) {
   const [tweets, setTweets] = useState([]);

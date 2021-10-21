@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
 import { v4 as uuidV4 } from "uuid";
-import { storage } from "../fbInstance";
+import { storage } from "../../fbInstance";
 import { db } from "fbInstance";
 
 export default function TweetForm({ userObj }) {

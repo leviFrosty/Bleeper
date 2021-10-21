@@ -4,7 +4,7 @@ import { db } from "fbInstance";
 import { useState } from "react/cjs/react.development";
 import { deleteObject } from "@firebase/storage";
 import { ref } from "firebase/storage";
-import { storage } from "../fbInstance";
+import { storage } from "../../fbInstance";
 
 export default function TweetCard({ tweet, isOwner, attachmentURL }) {
   const [editing, setEditing] = useState(false);
