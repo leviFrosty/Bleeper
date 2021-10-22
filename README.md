@@ -1,6 +1,9 @@
-# Twitter clone with editable tweets!
+# Bleeper!
+
+The twitter clone made with React and Firebase.
 
 #### Features:
+
 - 🔑 Authentication
   - Email/Password
   - Google
@@ -10,7 +13,9 @@
 - 🧭 Routing / Navigation
 - 🏷️ Profile page
 - ➕👓✏️✖️ CRUD operations
+
 ##### Made with:
+
 - React
 - Jest
 - Firebase
