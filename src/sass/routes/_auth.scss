@@ -1,0 +1,67 @@
+.welcome {
+  @include flexCenter(row);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.welcome-start {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  .signin-header {
+    font-family: $fontPrimary;
+    font-weight: $titleWeight;
+    display: flex;
+    flex-direction: column;
+
+    .signin-header__logo {
+      margin: 3rem 0;
+      img {
+        width: 3.6rem;
+      }
+    }
+
+    .signin-header__title {
+      h1 {
+        margin: 0.25rem 0;
+      }
+    }
+
+    .signin-header__description {
+      font-weight: normal;
+      opacity: 0.6;
+    }
+  }
+}
+
+.break-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  .break-start {
+    border: rgba(0, 0, 0, 0.3) 1px solid;
+    width: 100%;
+  }
+  .break-text {
+    padding: 0 1.5rem;
+    font-size: 0.8rem;
+    font-family: $fontPrimary;
+    opacity: 0.3;
+    text-align: center;
+    flex-grow: 2;
+    white-space: nowrap;
+  }
+  .break-end {
+    border: rgba(0, 0, 0, 0.3) 1px solid;
+    width: 100%;
+  }
+}
+
+.welcome-end {
+  background: lightblue;
+  height: 100vh;
+  width: 100%;
+}

@@ -28,12 +28,24 @@ export default function SignInSocials() {
 
   return (
     <div className="sigin-thirdParties">
-      <button name="google" onClick={onSocialSignin}>
-        Sign in with Google
-      </button>
-      <button name="github" onClick={onSocialSignin}>
-        Sign in with GitHub
-      </button>
+      <div className="signin__button__container">
+        <button
+          className="signin__button"
+          name="google"
+          onClick={onSocialSignin}
+        >
+          <i className="fab fa-google"></i>Sign in with Google
+        </button>
+      </div>
+      <div className="signin__button__container">
+        <button
+          className="signin__button"
+          name="github"
+          onClick={onSocialSignin}
+        >
+          <i className="fab fa-github"></i>Sign in with GitHub
+        </button>
+      </div>
     </div>
   );
 }

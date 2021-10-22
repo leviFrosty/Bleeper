@@ -1,0 +1,195 @@
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.welcome-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.welcome-start .signin-header {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.welcome-start .signin-header .signin-header__logo {
+  margin: 3rem 0;
+}
+
+.welcome-start .signin-header .signin-header__logo img {
+  width: 3.6rem;
+}
+
+.welcome-start .signin-header .signin-header__title h1 {
+  margin: 0.25rem 0;
+}
+
+.welcome-start .signin-header .signin-header__description {
+  font-weight: normal;
+  opacity: 0.6;
+}
+
+.break-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.break-container .break-start {
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  width: 100%;
+}
+
+.break-container .break-text {
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  font-family: "Rubik", sans-serif;
+  opacity: 0.3;
+  text-align: center;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  white-space: nowrap;
+}
+
+.break-container .break-end {
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  width: 100%;
+}
+
+.welcome-end {
+  background: lightblue;
+  height: 100vh;
+  width: 100%;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.sigin-thirdParties {
+  margin: 1.25rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sigin-thirdParties .signin__button__container {
+  width: 100%;
+}
+
+.sigin-thirdParties .signin__button {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.sigin-thirdParties .signin__button i {
+  margin: 0 20px 0 0;
+}
+
+.signin-form__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signin-form__container .signin-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.signin-form__container .signin-form input {
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=style.css.map */

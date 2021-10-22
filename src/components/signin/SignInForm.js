@@ -52,9 +52,11 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="signin-form">
-      <form onSubmit={onSubmit}>
+    <div className="signin-form__container">
+      <form className="signin-form" onSubmit={onSubmit}>
+        <label className="">Email</label>
         <input
+          isrequired="true"
           name="email"
           className="input"
           required
@@ -72,15 +74,21 @@ export default function SignInForm() {
           value={password}
           onChange={onChange}
         />
-        <input
-          type="submit"
-          value={newAcccount ? "Create account" : "Sign in"}
-        />
+        <input type="submit" value={newAcccount ? "Create account" : "Login"} />
         {error ? <div>{error.message}</div> : null}
       </form>
-      <button onClick={toggleNewAccount}>
-        {newAcccount ? "Sign in?" : "Create account"}
-      </button>
+
+      {newAcccount ? (
+        <div>
+          <span>Already Have an Account?</span>
+          <button onClick={toggleNewAccount}>Login</button>
+        </div>
+      ) : (
+        <div>
+          <span>Not Registered Yet?</span>
+          <button onClick={toggleNewAccount}>Create an Account</button>
+        </div>
+      )}
     </div>
   );
 }

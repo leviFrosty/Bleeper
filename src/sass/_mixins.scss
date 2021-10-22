@@ -1,0 +1,26 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin fontFamily($fontSize) {
+  font-family: "Rubik", sans-serif;
+  font-size: $fontSize;
+}
+
+@mixin ctaButton() {
+  cursor: pointer;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@mixin roundedInput() {
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}

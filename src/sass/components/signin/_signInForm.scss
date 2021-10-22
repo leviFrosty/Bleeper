@@ -1,0 +1,13 @@
+.signin-form__container {
+  @include flexCenter(column);
+
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      @include roundedInput();
+    }
+  }
+}
