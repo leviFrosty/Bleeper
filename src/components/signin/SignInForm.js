@@ -54,41 +54,64 @@ export default function SignInForm() {
   return (
     <div className="signin-form__container">
       <form className="signin-form" onSubmit={onSubmit}>
-        <label className="">Email</label>
-        <input
-          isrequired="true"
-          name="email"
-          className="input"
-          required
-          placeholder="email"
-          type="email"
-          value={email}
-          onChange={onChange}
-        />
-        <input
-          name="password"
-          className="input"
-          required
-          placeholder="password"
-          type="password"
-          value={password}
-          onChange={onChange}
-        />
-        <input type="submit" value={newAcccount ? "Create account" : "Login"} />
-        {error ? <div>{error.message}</div> : null}
+        <div className="input__container">
+          <label htmlFor="email" className="requiredinput">
+            Email
+          </label>
+          <input
+            autoComplete="username"
+            name="email"
+            className="input"
+            required
+            placeholder="user@domain.tld"
+            type="email"
+            value={email}
+            onChange={onChange}
+          />
+        </div>
+        <div className="input__container">
+          <label htmlFor="password" className="requiredinput">
+            Password
+          </label>
+          <input
+            autoComplete="current-password"
+            name="password"
+            className="input"
+            minLength={8}
+            required
+            placeholder="Min. 8 characters"
+            type="password"
+            value={password}
+            onChange={onChange}
+          />
+          {error ? (
+            <div className="input-error">
+              <p>{error.message}</p>
+            </div>
+          ) : (
+            <p></p>
+          )}
+          <input
+            className="input-submit"
+            type="submit"
+            value={newAcccount ? "Create account" : "Login"}
+          />
+        </div>
       </form>
 
-      {newAcccount ? (
-        <div>
-          <span>Already Have an Account?</span>
-          <button onClick={toggleNewAccount}>Login</button>
-        </div>
-      ) : (
-        <div>
-          <span>Not Registered Yet?</span>
-          <button onClick={toggleNewAccount}>Create an Account</button>
-        </div>
-      )}
+      <div className="not-registered">
+        {newAcccount ? (
+          <div className="not-registered__question">
+            <span>Already Have an Account?</span>
+            <button onClick={toggleNewAccount}>Login</button>
+          </div>
+        ) : (
+          <div className="not-registered__question">
+            <span>Not Registered Yet?</span>
+            <button onClick={toggleNewAccount}>Create an Account</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@
 }
 
 @mixin ctaButton() {
+  padding: $inputsPadding;
   cursor: pointer;
   border-radius: 25px;
   text-decoration: none;
@@ -19,6 +20,7 @@
 }
 
 @mixin roundedInput() {
+  padding: $inputsPadding;
   border-radius: 25px;
   text-decoration: none;
   background: none;

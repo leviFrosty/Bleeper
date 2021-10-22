@@ -6,8 +6,72 @@
     flex-direction: column;
     width: 100%;
 
+    .input__container {
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem 0;
+    }
+    .requiredinput::after {
+      content: "*";
+      color: $accentColor;
+    }
+    label {
+      font-family: $fontPrimary;
+      margin: 0 0 0.25rem 0;
+    }
+
     input {
+      font-family: $fontPrimary;
       @include roundedInput();
+    }
+
+    .input-error {
+      display: flex;
+      align-items: center;
+      min-height: 2rem;
+
+      p {
+        color: rgb(255, 80, 49);
+        margin: 0;
+        width: 100%;
+        font-family: $fontPrimary;
+      }
+    }
+
+    .input-submit {
+      margin: 0.5rem 0;
+      background: $accentColor;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+    }
+    .input-submit:hover {
+      color: $accentColor;
+      background: none;
+      border: 1px solid $accentColor;
+      cursor: pointer;
+    }
+  }
+  .not-registered {
+    display: flex;
+    width: 100%;
+    .not-registered__question {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      span {
+        font-family: $fontPrimary;
+      }
+      button {
+        font-family: $fontPrimary;
+        border: none;
+        background: none;
+        color: $accentColor;
+      }
+      button:hover {
+        opacity: 0.5;
+      }
     }
   }
 }

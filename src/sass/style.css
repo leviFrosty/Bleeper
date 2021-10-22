@@ -58,6 +58,7 @@
 }
 
 .break-container {
+  margin: 1.2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,6 +137,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  padding: 0.7rem;
   cursor: pointer;
   border-radius: 25px;
   text-decoration: none;
@@ -151,12 +153,17 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0.5rem 0;
-  padding: 0.5rem 0;
   width: 100%;
+}
+
+.sigin-thirdParties .signin__button img {
+  margin: 0 20px 0 0;
+  width: 1rem;
 }
 
 .sigin-thirdParties .signin__button i {
   margin: 0 20px 0 0;
+  width: 1rem;
 }
 
 .signin-form__container {
@@ -186,10 +193,101 @@ body {
   width: 100%;
 }
 
+.signin-form__container .signin-form .input__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.5rem 0;
+}
+
+.signin-form__container .signin-form .requiredinput::after {
+  content: "*";
+  color: #3099e9;
+}
+
+.signin-form__container .signin-form label {
+  font-family: "Rubik", sans-serif;
+  margin: 0 0 0.25rem 0;
+}
+
 .signin-form__container .signin-form input {
+  font-family: "Rubik", sans-serif;
+  padding: 0.7rem;
   border-radius: 25px;
   text-decoration: none;
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.signin-form__container .signin-form .input-error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 2rem;
+}
+
+.signin-form__container .signin-form .input-error p {
+  color: #ff5031;
+  margin: 0;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.signin-form__container .signin-form .input-submit {
+  margin: 0.5rem 0;
+  background: #3099e9;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+}
+
+.signin-form__container .signin-form .input-submit:hover {
+  color: #3099e9;
+  background: none;
+  border: 1px solid #3099e9;
+  cursor: pointer;
+}
+
+.signin-form__container .not-registered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.signin-form__container .not-registered .not-registered__question {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signin-form__container .not-registered .not-registered__question span {
+  font-family: "Rubik", sans-serif;
+}
+
+.signin-form__container .not-registered .not-registered__question button {
+  font-family: "Rubik", sans-serif;
+  border: none;
+  background: none;
+  color: #3099e9;
+}
+
+.signin-form__container .not-registered .not-registered__question button:hover {
+  opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */

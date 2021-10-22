@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "fbInstance";
+import google from "../../images/google.png";
 
 export default function SignInSocials() {
   const onSocialSignin = async (event) => {
@@ -34,7 +35,8 @@ export default function SignInSocials() {
           name="google"
           onClick={onSocialSignin}
         >
-          <i className="fab fa-google"></i>Sign in with Google
+          <img src={google} alt="" />
+          Sign in with Google
         </button>
       </div>
       <div className="signin__button__container">
