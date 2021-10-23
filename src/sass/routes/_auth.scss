@@ -66,3 +66,159 @@
   height: 100vh;
   width: 100%;
 }
+
+.bg {
+  background: $accentColor;
+  @include expand();
+  position: relative;
+  overflow: hidden;
+
+  // Top left
+  .bg_top_left_1 {
+    background: $accentColorDarker;
+    position: absolute;
+    height: 15%;
+    width: 10%;
+    top: 0;
+    left: 0;
+  }
+  .bg_top_left_2 {
+    background: $accentColorDarker;
+    position: absolute;
+    height: 7.5%;
+    width: 10%;
+    top: 0;
+    left: 10%;
+  }
+  // Top right
+
+  // Row 1
+  .bg_top_right_row-1_item1__container {
+    @include triangleContainer();
+    right: 10%;
+    .r1_i1__box {
+      @include triangleBox();
+    }
+    .r1_i1__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-1_item2__container {
+    @include triangleContainer();
+    right: 20%;
+    .r1_i2__box {
+      @include triangleBox();
+    }
+    .r1_i2__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-1_item3__container {
+    @include triangleContainer();
+    right: 30%;
+    .r1_i3__box {
+      @include triangleBox();
+    }
+    .r1_i3__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-1_item4__container {
+    @include triangleContainer();
+    right: 40%;
+    .r1_i4__box {
+      @include triangleBox();
+    }
+    .r1_i4__triangle {
+      @include triangleMask();
+    }
+  }
+
+  // Row 2
+  .bg_top_right_row-2_item1__container {
+    @include triangleContainer();
+    right: 10%;
+    top: 7.5%;
+    .r2_i1__box {
+      @include triangleBox();
+    }
+    .r2_i1__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-2_item2__container {
+    @include triangleContainer();
+    right: 20%;
+    top: 7.5%;
+    .r2_i2__box {
+      @include triangleBox();
+    }
+    .r2_i2__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-2_item3__container {
+    @include triangleContainer();
+    right: 30%;
+    top: 7.5%;
+    .r2_i3__box {
+      @include triangleBox();
+    }
+    .r2_i3__triangle {
+      @include triangleMask();
+    }
+  }
+  .bg_top_right_row-2_item4__container {
+    @include triangleContainer();
+    right: 40%;
+    top: 7.5%;
+    .r2_i4__box {
+      @include triangleBox();
+    }
+    .r2_i4__triangle {
+      @include triangleMask();
+    }
+  }
+
+  // Bottom Right
+  .bg_bottom-right_1 {
+    background: $accentColorDarker;
+    height: 40%;
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .bg_bottom-right_2 {
+    background: $accentColorDarker;
+    height: 32%;
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+  }
+  .bg_bottom-right_3 {
+    background: $accentColorDarker;
+    height: 24%;
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+  }
+  .bg_bottom-right_4 {
+    background: $accentColorDarker;
+    height: 16%;
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    right: 30%;
+  }
+  .bg_bottom-right_5 {
+    background: $accentColorDarker;
+    height: 8%;
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    right: 40%;
+  }
+}

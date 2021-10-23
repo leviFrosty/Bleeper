@@ -26,3 +26,32 @@
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+@mixin expand() {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin triangleContainer() {
+  position: absolute;
+  width: 7.5%;
+  height: 7.5%;
+  overflow: hidden;
+}
+
+@mixin triangleBox() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: $accentColorDarker;
+}
+
+@mixin triangleMask() {
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  background: $accentColor;
+  left: 0%;
+  top: -33%;
+  transform: rotate(-41deg);
+}
