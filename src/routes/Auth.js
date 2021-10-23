@@ -9,8 +9,12 @@ export default function Auth() {
       <div className="welcome-start">
         <div className="signin__container">
           <div className="signin-header">
-            <div className="signin-header__logo">
-              <img src={logo} alt="" />
+            <div className="signin-header-logo">
+              <img
+                className="signin-header-logo__image animate__swing"
+                src={logo}
+                alt=""
+              />
             </div>
             <div className="signin-header__title">
               <h1>Login</h1>

@@ -2,19 +2,33 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 1024px) {
+  .welcome-end {
+    display: none;
+  }
+  .welcome-start {
+    width: 100vw;
+  }
+  .signin__container {
+    width: 100%;
+    max-width: 612px;
+    padding: 0 1rem;
+  }
 }
 
 .welcome-start {
@@ -26,6 +40,19 @@
           justify-content: center;
   height: 100vh;
   width: 100%;
+}
+
+.welcome-start .signin__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .welcome-start .signin-header {
@@ -40,12 +67,53 @@
           flex-direction: column;
 }
 
-.welcome-start .signin-header .signin-header__logo {
-  margin: 3rem 0;
+.welcome-start .signin-header .signin-header-logo {
+  height: 10rem;
+  position: relative;
 }
 
-.welcome-start .signin-header .signin-header__logo img {
+.welcome-start .signin-header .signin-header-logo__image {
   width: 3.6rem;
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: forward;
+          animation-direction: forward;
+}
+
+@media screen and (max-width: 1024px) {
+  .welcome-start .signin-header .signin-header-logo {
+    height: 8rem;
+  }
+  .welcome-start .signin-header .signin-header-logo__image {
+    top: 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-start .signin-header .signin-header-logo {
+    height: 6rem;
+  }
+  .welcome-start .signin-header .signin-header-logo__image {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .welcome-start .signin-header .signin-header-logo {
+    margin: 1.5rem 0 0.5rem 0;
+    height: 4rem;
+  }
+  .welcome-start .signin-header .signin-header-logo__image {
+    bottom: 0;
+  }
+  .welcome-start .signin-header .signin-header__description p {
+    margin: 0;
+  }
 }
 
 .welcome-start .signin-header .signin-header__title h1 {
@@ -93,8 +161,13 @@
   width: 100%;
 }
 
+@media screen and (max-width: 400px) {
+  .break-container {
+    margin: 0.5rem;
+  }
+}
+
 .welcome-end {
-  background: lightblue;
   height: 100vh;
   width: 100%;
 }
@@ -455,6 +528,12 @@ body {
   border: 1px solid black;
 }
 
+@media screen and (max-width: 400px) {
+  .sigin-thirdParties {
+    margin: 0;
+  }
+}
+
 .signin-form__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,6 +570,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 400px) {
+  .signin-form__container .signin-form .input__container {
+    margin: 0.2rem;
+  }
 }
 
 .signin-form__container .signin-form .requiredinput::after {
@@ -548,6 +633,12 @@ body {
   padding: 0.7rem;
   -webkit-transition: all ease-in-out 0.15s;
   transition: all ease-in-out 0.15s;
+}
+
+@media screen and (max-width: 400px) {
+  .signin-form__container .signin-form .input-submit {
+    margin: 0rem;
+  }
 }
 
 .signin-form__container .signin-form .input-submit:hover {

@@ -1,8 +1,26 @@
 .welcome {
-  @include flexCenter(row);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+// Removes bg container on smaller displays
+@media screen and (max-width: $ss1) {
+  .welcome-end {
+    display: none;
+  }
+  .welcome-start {
+    width: 100vw;
+  }
+  .signin__container {
+    width: 100%;
+    max-width: 612px;
+    padding: 0 1rem;
+  }
 }
 
 .welcome-start {
@@ -11,17 +29,62 @@
   height: 100vh;
   width: 100%;
 
+  .signin__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .signin-header {
     font-family: $fontPrimary;
     font-weight: $titleWeight;
     display: flex;
     flex-direction: column;
 
-    .signin-header__logo {
-      margin: 3rem 0;
-      img {
-        width: 3.6rem;
+    .signin-header-logo {
+      height: 10rem;
+      position: relative;
+    }
+    .signin-header-logo__image {
+      width: 3.6rem;
+      position: absolute;
+      top: 30%;
+      left: 0%;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-direction: forward;
+    }
+    @media screen and (max-width: $ss1) {
+      .signin-header-logo {
+        height: 8rem;
       }
+      .signin-header-logo__image {
+        top: 25%;
+      }
+    }
+    @media screen and (max-width: $ss2) {
+      .signin-header-logo {
+        height: 6rem;
+      }
+      .signin-header-logo__image {
+        top: 10%;
+      }
+    }
+
+    @media screen and (max-width: $ss3) {
+      .signin-header-logo {
+        margin: 1.5rem 0 0.5rem 0;
+        height: 4rem;
+      }
+      .signin-header-logo__image {
+        bottom: 0;
+      }
+      .signin-header__description p {
+        margin: 0;
+      }
+    }
+
+    .signin-header-logo__image:hover {
     }
 
     .signin-header__title {
@@ -37,6 +100,7 @@
   }
 }
 
+// For 'or sign in with email' divider
 .break-container {
   margin: 1.2rem 0;
   display: flex;
@@ -60,9 +124,13 @@
     width: 100%;
   }
 }
+@media screen and (max-width: $ss3) {
+  .break-container {
+    margin: 0.5rem;
+  }
+}
 
 .welcome-end {
-  background: lightblue;
   height: 100vh;
   width: 100%;
 }
