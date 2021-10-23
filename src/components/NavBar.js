@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logo from "images/logo.webp";
 
 export default function NavBar({ userObj }) {
   return (
@@ -7,14 +8,24 @@ export default function NavBar({ userObj }) {
       <div className="nav-container">
         <div className="nav-start">
           <Link to="/">
-            <i class="fas fa-home"></i>
+            <img className="nav-home" src={logo} alt="" />
           </Link>
         </div>
+        <div className="nav-links">
+          <NavLink className="NavLink" exact to="/">
+            Home
+          </NavLink>
+          <NavLink className="NavLink" to="/profile">
+            Profile
+          </NavLink>
+        </div>
         <div className="nav-end">
-          <Link to="/profile">
-            {userObj.displayName} <i class="fas fa-address-card"></i>
+          <Link className="navProfile-link" to="/profile">
+            {userObj.photoURL && (
+              <img className="navProfile-image" src={userObj.photoURL} alt="" />
+            )}
+            {userObj.displayName}
           </Link>
-          {userObj.photoURL && <img src={userObj.photoURL} alt="" />}
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import Home from "routes/Home";
 import NavBar from "./NavBar";
 import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NewUser from "routes/NewUser";
 import MadeWithLove from "./MadeWithLove";
 

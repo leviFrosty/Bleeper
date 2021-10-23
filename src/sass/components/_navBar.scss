@@ -1,0 +1,68 @@
+.nav {
+  margin: 2rem 0 2rem 0;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 5rem;
+}
+
+.nav-start {
+  @include flexCenter(row);
+}
+
+.nav-home {
+  color: $accentColor;
+  height: 1.5rem;
+  transition: all 0.15s ease-in;
+}
+.nav-home:hover {
+  opacity: 0.5;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.NavLink {
+  margin: 0 1rem;
+  font-family: $fontPrimary;
+  text-decoration: none;
+  color: $primaryColor;
+  transition: all 0.15s ease-in;
+}
+.NavLink:hover {
+  opacity: 0.5;
+}
+.active {
+  font-weight: 500;
+}
+
+.nav-end {
+  padding: 0.2rem 1rem;
+  transition: all 0.15s ease-in;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 25px;
+}
+.nav-end:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.navProfile-link {
+  font-family: $fontPrimary;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $primaryColor;
+}
+.navProfile-image {
+  margin: 0 1rem 0 0;
+  height: 2rem;
+  border-radius: 50%;
+}

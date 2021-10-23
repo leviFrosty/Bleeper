@@ -714,4 +714,109 @@ body {
 .madeWithLove .madeWithLove__github:hover {
   opacity: 0.5;
 }
+
+.nav {
+  margin: 2rem 0 2rem 0;
+}
+
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 5rem;
+}
+
+.nav-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.nav-home {
+  color: #3099e9;
+  height: 1.5rem;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.nav-home:hover {
+  opacity: 0.5;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavLink {
+  margin: 0 1rem;
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: #1c213f;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.NavLink:hover {
+  opacity: 0.5;
+}
+
+.active {
+  font-weight: 500;
+}
+
+.nav-end {
+  padding: 0.2rem 1rem;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 25px;
+}
+
+.nav-end:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.navProfile-link {
+  font-family: "Rubik", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #1c213f;
+}
+
+.navProfile-image {
+  margin: 0 1rem 0 0;
+  height: 2rem;
+  border-radius: 50%;
+}
 /*# sourceMappingURL=style.css.map */
