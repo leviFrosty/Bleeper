@@ -437,6 +437,8 @@ body {
           align-items: center;
   margin: 0.5rem 0;
   width: 100%;
+  -webkit-transition: border ease-in-out 0.2s;
+  transition: border ease-in-out 0.2s;
 }
 
 .sigin-thirdParties .signin__button img {
@@ -447,6 +449,10 @@ body {
 .sigin-thirdParties .signin__button i {
   margin: 0 20px 0 0;
   width: 1rem;
+}
+
+.sigin-thirdParties .signin__button:hover {
+  border: 1px solid black;
 }
 
 .signin-form__container {
@@ -497,19 +503,24 @@ body {
   margin: 0 0 0.25rem 0;
 }
 
-.signin-form__container .signin-form input {
+.signin-form__container .signin-form input,
+.signin-form__container .signin-form textarea {
   font-family: "Rubik", sans-serif;
   padding: 0.7rem;
   border-radius: 25px;
   text-decoration: none;
   background: none;
+  outline: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-transition: outline 0.1s;
-  transition: outline 0.1s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
+.signin-form__container .signin-form textarea:focus,
 .signin-form__container .signin-form input:focus {
   outline: 2px solid #3099e9;
+  border: none;
+  color: #3099e9;
 }
 
 .signin-form__container .signin-form .input-error {
@@ -569,10 +580,12 @@ body {
 
 .signin-form__container .not-registered .not-registered__question span {
   font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
 }
 
 .signin-form__container .not-registered .not-registered__question button {
   font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
   border: none;
   background: none;
   color: #3099e9;

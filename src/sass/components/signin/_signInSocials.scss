@@ -19,6 +19,7 @@
     align-items: center;
     margin: 0.5rem 0;
     width: 100%;
+    transition: border ease-in-out 0.2s;
     img {
       margin: 0 20px 0 0;
       width: 1rem;
@@ -27,5 +28,9 @@
       margin: 0 20px 0 0;
       width: 1rem;
     }
+  }
+
+  .signin__button:hover {
+    border: 1px solid rgb(0, 0, 0);
   }
 }
