@@ -1,0 +1,17 @@
+.madeWithLove {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .madeWithLove__github {
+    text-decoration: none;
+    color: $primaryColor;
+    opacity: 1;
+    font-family: $fontPrimary;
+    transition: opacity ease-in 0.1s;
+  }
+  .madeWithLove__github:hover {
+    opacity: 0.5;
+  }
+}

@@ -221,6 +221,12 @@ body {
   text-decoration: none;
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: outline 0.1s;
+  transition: outline 0.1s;
+}
+
+.signin-form__container .signin-form input:focus {
+  outline: 2px solid #3099e9;
 }
 
 .signin-form__container .signin-form .input-error {
@@ -242,10 +248,12 @@ body {
 
 .signin-form__container .signin-form .input-submit {
   margin: 0.5rem 0;
-  background: #3099e9;
   color: white;
-  border: none;
+  background: #3099e9;
+  border: 1px solid #3099e9;
   padding: 0.7rem;
+  -webkit-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
 }
 
 .signin-form__container .signin-form .input-submit:hover {
@@ -288,6 +296,35 @@ body {
 }
 
 .signin-form__container .not-registered .not-registered__question button:hover {
+  opacity: 0.5;
+}
+
+.madeWithLove {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.madeWithLove .madeWithLove__github {
+  text-decoration: none;
+  color: #1c213f;
+  opacity: 1;
+  font-family: "Rubik", sans-serif;
+  -webkit-transition: opacity ease-in 0.1s;
+  transition: opacity ease-in 0.1s;
+}
+
+.madeWithLove .madeWithLove__github:hover {
   opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */
