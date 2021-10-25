@@ -74,32 +74,68 @@ export default function TweetForm({ userObj }) {
     setAttachment(null);
   };
   return (
-    <div className="tweet-from">
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          type="text"
-          required
-          placeholder="What's on your mind?"
-          value={tweet}
-        />
-        <span>{tweet.length}</span>
-        <span>/140</span>
-        <input
-          className="tweetForm-imageInput"
-          type="file"
-          accept="image/*"
-          onChange={onAddAttachment}
-        />
-        {processing && <div>Processing image...</div>}
-        {attachment && <button onClick={onClearAttachment}>Cancel</button>}
-        <button type="submit">Tweet</button>
-        {attachment && (
-          <div>
-            <img src={attachment} alt="" />
-            <button onClick={onClearAttachment}>X</button>
+    <div className="tweetForm__container">
+      <form className="tweetForm" onSubmit={onSubmit}>
+        <div className="tweetForm-start">
+          <img
+            className="tweetForm__profileImg"
+            src={userObj.photoURL}
+            alt=""
+          />
+        </div>
+        <div className="tweetForm-end">
+          <div className="textInput__container">
+            <input
+              onChange={onChange}
+              type="text"
+              required
+              maxLength={280}
+              placeholder="What's on your mind?"
+              className="tweetForm__textInput"
+              value={tweet}
+            />
+            <div className="textInput__chars">
+              <span>{tweet.length}</span>
+              <span>/280</span>
+            </div>
           </div>
-        )}
+          <div className="image-input__container">
+            <div className="input-input-start">
+              <label for="image-input">
+                <i className="fas fa-file-image image-input__icon"></i>
+              </label>
+              <input
+                id="image-input"
+                className="tweetForm-imageInput"
+                type="file"
+                accept="image/*"
+                onChange={onAddAttachment}
+              />
+              {processing && <div>Processing image...</div>}
+              {attachment && (
+                <div className="tweetForm-attachedImage">
+                  <img
+                    className="tweetForm-attachedImage__content"
+                    src={attachment}
+                    alt=""
+                  />
+                  <button
+                    type="button"
+                    className="tweetForm-attachedImage__deleteButton"
+                    onClick={onClearAttachment}
+                  >
+                    <i className="fas fa-trash-alt "></i>
+                  </button>
+                </div>
+              )}
+            </div>
+            <div className="input-input-end">
+              <button className="tweetForm__submitButton" type="submit">
+                Bleep
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );

@@ -12,7 +12,7 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
     <Router>
       {isLoggedIn && <NavBar userObj={userObj} />}
-      <div className="app__container">
+      <div className="main">
         <Switch>
           {isLoggedIn ? (
             <div className="loggedin__container">
@@ -40,6 +40,8 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
             </div>
           )}
         </Switch>
+      </div>
+      <div className="explore">
         <MadeWithLove />
       </div>
     </Router>

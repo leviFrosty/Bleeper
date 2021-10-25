@@ -1,0 +1,111 @@
+.tweetForm__container {
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.tweetForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tweetForm-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.tweetForm__profileImg {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+.tweetForm-end {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textInput__container {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweetForm__textInput {
+  flex-grow: 2;
+  font-family: $fontPrimary;
+  @include roundedInput();
+  transition: all 0.1s;
+}
+.tweetForm__textInput:focus,
+.tweetForm__textInput textarea:focus {
+  outline: 2px solid $accentColor;
+  border: none;
+  color: $primaryColor;
+}
+.textInput__chars {
+  padding: 0 0 0 1rem;
+  span {
+    font-family: $fontPrimary;
+  }
+}
+
+.image-input__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.image-input__icon {
+  font-size: 2rem;
+  color: $accentColor;
+  transition: all 0.1s ease-in;
+}
+.image-input__icon:hover {
+  opacity: 0.5;
+}
+
+#image-input {
+  display: none;
+}
+
+.tweetForm-attachedImage {
+  position: relative;
+
+  overflow: hidden;
+}
+.tweetForm-attachedImage__content {
+  object-fit: fill;
+  max-height: 250px;
+  max-width: 333px;
+}
+.tweetForm-attachedImage__deleteButton {
+  @include roundedInput();
+  background: white;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transition: all 0.1s ease-in;
+}
+.tweetForm-attachedImage__deleteButton:hover {
+  opacity: 0.7;
+}
+.tweetForm__submitButton {
+  font-family: $fontPrimary;
+  font-size: 0.8rem;
+  @include roundedInput();
+  padding: 0.5rem 1rem;
+  border: 1px solid $accentColor;
+  background: $accentColor;
+  color: white;
+  font-weight: 600;
+  transition: all 0.1s ease-in;
+}
+.tweetForm__submitButton:hover {
+  opacity: 0.5;
+}

@@ -21,6 +21,10 @@ export default function Home({ userObj }) {
 
   return (
     <div className="home">
+      <div className="home-title__container">
+        <h1 className="home-title__heading">Home</h1>
+        <i className="fas fa-home home-title__icon"></i>
+      </div>
       <TweetForm userObj={userObj} />
       <div>
         {tweets.map((tweet) => {

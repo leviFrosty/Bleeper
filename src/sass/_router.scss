@@ -1,3 +1,13 @@
-.app__container {
-  width: 100%;
+.main {
+  width: 512px;
+  border-right: 1px solid black;
+}
+
+.explore {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-grow: 2;
 }
