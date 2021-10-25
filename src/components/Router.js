@@ -12,34 +12,36 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
     <Router>
       {isLoggedIn && <NavBar userObj={userObj} />}
-      <Switch>
-        {isLoggedIn ? (
-          <React.Fragment>
-            <Route exact path="/new-user">
-              <NewUser
-                userObj={userObj}
-                refreshDisplayName={refreshDisplayName}
-              />
-            </Route>
-            <Route exact path="/profile">
-              <Profile
-                userObj={userObj}
-                refreshDisplayName={refreshDisplayName}
-              />
-            </Route>
-            <Route exact path="/not-found" component={NotFound} />
-            <Route exact path="/">
-              <Home userObj={userObj} />
-            </Route>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Route exact path="/not-found" component={NotFound} />
-            <Route exact path="/" component={Auth} />
-          </React.Fragment>
-        )}
-      </Switch>
-      <MadeWithLove />
+      <div className="app__container">
+        <Switch>
+          {isLoggedIn ? (
+            <div className="loggedin__container">
+              <Route exact path="/new-user">
+                <NewUser
+                  userObj={userObj}
+                  refreshDisplayName={refreshDisplayName}
+                />
+              </Route>
+              <Route exact path="/profile">
+                <Profile
+                  userObj={userObj}
+                  refreshDisplayName={refreshDisplayName}
+                />
+              </Route>
+              <Route exact path="/not-found" component={NotFound} />
+              <Route exact path="/">
+                <Home userObj={userObj} />
+              </Route>
+            </div>
+          ) : (
+            <div className="loggedout__container">
+              <Route exact path="/not-found" component={NotFound} />
+              <Route exact path="/" component={Auth} />
+            </div>
+          )}
+        </Switch>
+        <MadeWithLove />
+      </div>
     </Router>
   );
 };

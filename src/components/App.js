@@ -2,6 +2,7 @@ import AppRouter from "./Router";
 import React, { useEffect, useState } from "react";
 import { auth } from "fbInstance";
 import { onAuthStateChanged, reload } from "firebase/auth";
+import Initializing from "./Initializing";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -27,7 +28,7 @@ function App() {
     });
   }, []);
   return (
-    <div className="App">
+    <div className={init ? "App" : "App-Loading"}>
       {init ? (
         <AppRouter
           isLoggedIn={isLoggedIn}
@@ -35,7 +36,7 @@ function App() {
           refreshDisplayName={refreshDisplayName}
         />
       ) : (
-        "Initializing..."
+        <Initializing />
       )}
     </div>
   );
