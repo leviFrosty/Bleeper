@@ -12,9 +12,9 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
     <Router>
       {isLoggedIn && <NavBar userObj={userObj} />}
-      <div className="main">
-        <Switch>
-          {isLoggedIn ? (
+      <Switch>
+        {isLoggedIn ? (
+          <div className="main">
             <div className="loggedin__container">
               <Route exact path="/new-user">
                 <NewUser
@@ -33,17 +33,19 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
                 <Home userObj={userObj} />
               </Route>
             </div>
-          ) : (
-            <div className="loggedout__container">
-              <Route exact path="/not-found" component={NotFound} />
-              <Route exact path="/" component={Auth} />
-            </div>
-          )}
-        </Switch>
-      </div>
-      <div className="explore">
-        <MadeWithLove />
-      </div>
+          </div>
+        ) : (
+          <div className="logged-out">
+            <Route exact path="/not-found" component={NotFound} />
+            <Route exact path="/" component={Auth} />
+          </div>
+        )}
+      </Switch>
+      {isLoggedIn && (
+        <div className="explore">
+          <MadeWithLove />
+        </div>
+      )}
     </Router>
   );
 };

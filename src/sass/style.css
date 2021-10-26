@@ -905,6 +905,10 @@ body {
           align-items: center;
 }
 
+.logged-out {
+  width: 100%;
+}
+
 .main {
   width: 512px;
   border-right: 1px solid black;
