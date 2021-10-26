@@ -15,15 +15,23 @@ export default function TweetCard({ tweet, isOwner, attachmentURL }) {
       return (
         <div>
           {editing ? (
-            <button onClick={toggleEditing}>Cancel</button>
+            <button className="editing__button" onClick={toggleEditing}>
+              Cancel
+            </button>
           ) : (
-            <button onClick={toggleEditing}>Edit</button>
+            <button className="editing__button" onClick={toggleEditing}>
+              Edit
+            </button>
           )}
 
           {editing ? (
-            <button onClick={onSave}>Save</button>
+            <button className="editing__button" onClick={onSave}>
+              Save
+            </button>
           ) : (
-            <button onClick={onDeleteClick}>Delete</button>
+            <button className="editing__button" onClick={onDeleteClick}>
+              Delete
+            </button>
           )}
         </div>
       );
@@ -66,35 +74,45 @@ export default function TweetCard({ tweet, isOwner, attachmentURL }) {
   };
 
   return (
-    <div>
-      {attachmentURL && (
-        <div className="attachment">
-          <span>Attachment:</span>
-          <img src={attachmentURL} alt="" />
-        </div>
-      )}
+    <div className="tweetCard">
+      <div className="tweetCard-user">
+        <img
+          className="tweetCard-user__img"
+          src={tweet.userPhotoURL}
+          alt={tweet.displayName}
+        />
+        <h4 className="tweetCard-user__name">{tweet.creatorDisplayName}</h4>
+      </div>
       {editing ? (
         <>
-          <form onSubmit={onSave}>
+          <form className="tweetCard-editing" onSubmit={onSave}>
             <input
               value={newTweet}
               required
               maxLength={140}
               onChange={onEdit}
+              className="tweetCard-editing__input"
             />
-            <span>{newTweet.length}</span>
-            <span>/140</span>
+            <div className="tweetCard-editing__chars">
+              <span>{newTweet.length}</span>
+              <span>/140</span>
+            </div>
           </form>
         </>
       ) : (
-        <div>
-          <h3>{tweet.text}</h3>
+        <div className="tweetCard-text">
+          <h3 className="tweetCard-text__content">{tweet.text}</h3>
         </div>
       )}
-      <div className="tweet-user">
-        <h4>{tweet.creatorDisplayName}</h4>
-        <img src={tweet.userPhotoURL} alt={tweet.displayName} />
-      </div>
+      {attachmentURL && (
+        <div className="tweetCard-attachment">
+          <img
+            className="tweetCard-attachment__img"
+            src={attachmentURL}
+            alt=""
+          />
+        </div>
+      )}
       {ownerOptions()}
     </div>
   );

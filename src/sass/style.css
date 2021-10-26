@@ -1124,4 +1124,131 @@ body {
   color: #1c213f;
   font-size: 1.5rem;
 }
+
+.tweetCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: lightgray;
+  border-radius: 25px;
+  margin: 1rem;
+  padding: 1rem;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.tweetCard-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.tweetCard-user .tweetCard-user__img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid white;
+}
+
+.tweetCard-user .tweetCard-user__name {
+  margin: 0.25rem 0.5rem;
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+  font-weight: 500;
+}
+
+.tweetCard-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tweetCard-text .tweetCard-text__content {
+  font-size: 1rem;
+  color: #1c213f;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.tweetCard-editing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tweetCard-editing .tweetCard-editing__input {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1c213f;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding: 0.7rem;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.1 ease-in;
+  transition: all 0.1 ease-in;
+}
+
+.tweetCard-editing .tweetCard-editing__input:focus {
+  border: 2px solid #3099e9;
+}
+
+.tweetCard-editing .tweetCard-editing__chars span {
+  font-family: "Rubik", sans-serif;
+}
+
+.editing__button {
+  padding: 0.7rem;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 0.5rem;
+}
+
+.editing__button:first-of-type {
+  margin: 0 4px 0 0;
+}
+
+.editing__button:hover {
+  opacity: 0.5;
+}
+
+.tweetCard-attachment__img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  max-height: 250px;
+  max-width: 333px;
+}
+
+.tweetCard-attachment__img:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
