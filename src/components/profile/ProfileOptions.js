@@ -33,30 +33,50 @@ export default function ProfileOptions({ userObj, refreshDisplayName }) {
   };
   return (
     <div className="profile-options">
-      <div className="profile-displayName">
-        <div>
-          <h1>{userObj.displayName}</h1>
-          <span onClick={onDisplayNameEditToggle}>
-            <i className="fas fa-edit"></i>
-          </span>
+      <div className="profile-options__container">
+        <div className="profile-displayName__container">
+          <div className="profile-displayName">
+            <h1>{userObj.displayName}</h1>
+            <span
+              className="profile-editName"
+              onClick={onDisplayNameEditToggle}
+            >
+              <i className="fas fa-edit profile-editName__icon"></i>
+            </span>
+          </div>
         </div>
-        {isEditingDisplayName && (
-          <div className="visually-hidden modal">
-            <h2>Name</h2>
-            <form onSubmit={onDisplayNameSubmit}>
+        <button className="profile-signOut" onClick={onSignoutClick}>
+          Sign out
+        </button>
+      </div>
+      {isEditingDisplayName && (
+        <div className="profile-editNameModal">
+          <h2 className="profile-editNameModal-title">Change your name</h2>
+          <form
+            className="profile-editNameModal-form"
+            onSubmit={onDisplayNameSubmit}
+          >
+            <div className="profile-editNameModel-form__inputContainer">
               <input
+                className="profile-editNameModal-form__input"
                 required
                 maxLength={29}
                 type="text"
                 onChange={onDisplayNameChange}
               />
-              <p>Your name how it will appear to other users.</p>
-              <button type="submit">Save</button>
-            </form>
-          </div>
-        )}
-      </div>
-      <button onClick={onSignoutClick}>Sign out</button>
+              <button
+                className="profile-editNameModal-form__submit"
+                type="submit"
+              >
+                Save
+              </button>
+            </div>
+            <p className="profile-editNameModal-form__desc">
+              Your name how it will appear to other users.
+            </p>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

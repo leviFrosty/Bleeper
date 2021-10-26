@@ -1,0 +1,100 @@
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+.profile-options__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-displayName__container {
+  display: flex;
+  flex-direction: column;
+}
+.profile-displayName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
+  h1 {
+    font-size: 1.5rem;
+    font-family: $fontPrimary;
+    color: $primaryColor;
+    margin: 0rem;
+  }
+  .profile-editName {
+    margin: 0.5rem;
+  }
+  .profile-editName__icon {
+    font-size: 1.2rem;
+  }
+  .profile-editName:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+.profile-editNameModal {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  .profile-editNameModal-title {
+    margin: 0;
+    color: $primaryColor;
+    font-family: $fontPrimary;
+    font-size: 1;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+  .profile-editNameModal-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .profile-editNameModel-form__inputContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .profile-editNameModal-form__input {
+      color: $primaryColor;
+      @include roundedInput();
+      flex-grow: 2;
+    }
+    .profile-editNameModal-form__input:focus {
+      border: 2px solid $accentColor;
+    }
+    .profile-editNameModal-form__desc {
+      font-family: $fontPrimary;
+      font-size: 1rem;
+      margin: 0.25rem;
+    }
+    .profile-editNameModal-form__submit {
+      @include roundedInput();
+      margin-left: 0.5rem;
+      background: $accentColor;
+      color: white;
+    }
+    .profile-editNameModal-form__submit:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}
+
+.profile-signOut {
+  @include roundedInput();
+  border: 2px solid $accentColor;
+  color: $accentColor;
+  margin: 0 1rem 0 0;
+  transition: all 0.1s ease-in;
+}
+.profile-signOut:hover {
+  cursor: pointer;
+  background: $accentColor;
+  color: white;
+}

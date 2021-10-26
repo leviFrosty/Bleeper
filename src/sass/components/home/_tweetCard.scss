@@ -1,6 +1,7 @@
 .tweetCard {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background: lightgray;
   border-radius: 25px;
   margin: 1rem;

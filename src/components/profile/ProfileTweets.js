@@ -42,7 +42,7 @@ export default function ProfileTweets({ userObj }) {
 
   return (
     <div className="profile-tweets">
-      <h2>Your tweets:</h2>
+      <h2 className="profile-tweets__heading">Your tweets:</h2>
       {tweets.map((tweet) => {
         return (
           <TweetCard
