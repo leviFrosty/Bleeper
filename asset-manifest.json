@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/twitClone/static/css/main.b8ae894f.chunk.css",
+    "main.js": "/twitClone/static/js/main.6f5d894a.chunk.js",
+    "main.js.map": "/twitClone/static/js/main.6f5d894a.chunk.js.map",
+    "runtime-main.js": "/twitClone/static/js/runtime-main.620997da.js",
+    "runtime-main.js.map": "/twitClone/static/js/runtime-main.620997da.js.map",
+    "static/js/2.c06bd2bd.chunk.js": "/twitClone/static/js/2.c06bd2bd.chunk.js",
+    "static/js/2.c06bd2bd.chunk.js.map": "/twitClone/static/js/2.c06bd2bd.chunk.js.map",
+    "index.html": "/twitClone/index.html",
+    "static/css/main.b8ae894f.chunk.css.map": "/twitClone/static/css/main.b8ae894f.chunk.css.map",
+    "static/js/2.c06bd2bd.chunk.js.LICENSE.txt": "/twitClone/static/js/2.c06bd2bd.chunk.js.LICENSE.txt",
+    "static/media/google.9adf7ef7.png": "/twitClone/static/media/google.9adf7ef7.png",
+    "static/media/logo.25c6b790.webp": "/twitClone/static/media/logo.25c6b790.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.620997da.js",
+    "static/js/2.c06bd2bd.chunk.js",
+    "static/css/main.b8ae894f.chunk.css",
+    "static/js/main.6f5d894a.chunk.js"
+  ]
+}
