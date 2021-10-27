@@ -17,7 +17,6 @@ The twitter clone made with React and Firebase.
 ##### Made with:
 
 - React
-- Jest
 - Firebase
 - Sass
 
