@@ -1452,4 +1452,110 @@ body {
   color: #1c213f;
   margin: 1rem;
 }
+
+.newuser {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newuser-welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2.5rem 1rem;
+}
+
+.newuser-welcome h1 {
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+  margin: 0.25rem 0;
+}
+
+.newuser-welcome p {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+}
+
+.newuser-dnChange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 1rem;
+}
+
+.newuser-dnChange h2 {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.newuser-dnChange .newuser-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newuser-dnChange .newuser-form input {
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+  padding: 0.7rem;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.newuser-dnChange .newuser-form label {
+  font-family: "Rubik", sans-serif;
+  color: #1c213f;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.newuser-dnChange .newuser-form button {
+  margin: 1rem 0;
+  font-family: "Rubik", sans-serif;
+  padding: 0.7rem;
+  border-radius: 25px;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #3099e9;
+  color: white;
+  border: 2px solid #3099e9;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.newuser-dnChange .newuser-form button:hover {
+  cursor: pointer;
+  background: none;
+  color: #3099e9;
+}
 /*# sourceMappingURL=style.css.map */

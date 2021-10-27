@@ -1,0 +1,64 @@
+.newuser {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.newuser-welcome {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem 1rem;
+  h1 {
+    font-family: $fontPrimary;
+    color: $primaryColor;
+    margin: 0.25rem 0;
+  }
+  p {
+    margin: 0;
+    font-family: $fontPrimary;
+    color: $primaryColor;
+  }
+}
+.newuser-dnChange {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  h2 {
+    margin: 0;
+    font-family: $fontPrimary;
+    color: $primaryColor;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .newuser-form {
+    display: flex;
+    flex-direction: column;
+    input {
+      font-family: $fontPrimary;
+      color: $primaryColor;
+
+      @include roundedInput();
+    }
+    label {
+      font-family: $fontPrimary;
+      color: $primaryColor;
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+    button {
+      margin: 1rem 0;
+      font-family: $fontPrimary;
+      @include roundedInput();
+      background: $accentColor;
+      color: white;
+      border: 2px solid $accentColor;
+      transition: all 0.1s ease-in;
+    }
+    button:hover {
+      cursor: pointer;
+      background: none;
+      color: $accentColor;
+    }
+  }
+}

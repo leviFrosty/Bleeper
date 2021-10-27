@@ -33,30 +33,26 @@ export default function NewUser({ userObj, refreshDisplayName }) {
   };
 
   return (
-    <div>
-      <div className="profile-welcome">
+    <div className="newuser">
+      <div className="newuser-welcome">
         <h1>Welcome to Bleeper!</h1>
         <p>Get started by entering your displayname below.</p>
       </div>
-      <div className="profile-options">
-        <div className="profile-displayName">
-          <div>
-            <h1>{userObj.displayName}</h1>
-          </div>
-          <div className="visually-hidden modal">
-            <h2>Name</h2>
-            <form onSubmit={onDisplayNameSubmit}>
-              <input
-                required
-                maxLength={29}
-                type="text"
-                onChange={onDisplayNameChange}
-              />
-              <p>Your name how it will appear to other users.</p>
-              <button type="submit">Let's go!</button>
-            </form>
-          </div>
-        </div>
+      <div className="newuser-dnChange">
+        <h2>Display Name</h2>
+        <form className="newuser-form" onSubmit={onDisplayNameSubmit}>
+          <input
+            id="displayName"
+            required
+            maxLength={29}
+            type="text"
+            onChange={onDisplayNameChange}
+          />
+          <label for="displayName">
+            Your name how it will appear to other users.
+          </label>
+          <button type="submit">Let's go!</button>
+        </form>
       </div>
     </div>
   );
