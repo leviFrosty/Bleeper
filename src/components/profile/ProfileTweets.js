@@ -7,38 +7,37 @@ import React, { useEffect } from "react";
 export default function ProfileTweets({ userObj }) {
   const [tweets, setTweets] = useState([]);
 
-  const getProfileTweets = async () => {
-    const docQuery = await query(
-      collection(db, "tweets"),
-      where("creatorId", "==", userObj.uid),
-      orderBy("createdAt", "desc")
-    );
-    const snapshot = await getDocs(docQuery);
-    let tweetArray = [];
-    if (snapshot.empty) {
-      return (
-        <div className="profile__noPosts">
-          <h1>😞 No tweets yet...</h1>
-        </div>
-      );
-    } else {
-      snapshot.forEach((docSnapshot) => {
-        const data = docSnapshot.data();
-        tweetArray = [
-          ...tweetArray,
-          {
-            id: docSnapshot.id,
-            ...data,
-          },
-        ];
-        setTweets(tweetArray);
-      });
-    }
-  };
-
   useEffect(() => {
+    async function getProfileTweets() {
+      const docQuery = await query(
+        collection(db, "tweets"),
+        where("creatorId", "==", userObj.uid),
+        orderBy("createdAt", "desc")
+      );
+      const snapshot = await getDocs(docQuery);
+      let tweetArray = [];
+      if (snapshot.empty) {
+        return (
+          <div className="profile__noPosts">
+            <h1>😞 No tweets yet...</h1>
+          </div>
+        );
+      } else {
+        snapshot.forEach((docSnapshot) => {
+          const data = docSnapshot.data();
+          tweetArray = [
+            ...tweetArray,
+            {
+              id: docSnapshot.id,
+              ...data,
+            },
+          ];
+          setTweets(tweetArray);
+        });
+      }
+    }
     getProfileTweets();
-  }, []);
+  }, [userObj.uid]);
 
   return (
     <div className="profile-tweets">

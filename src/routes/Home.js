@@ -8,16 +8,19 @@ import TweetForm from "components/home/TweetForm";
 export default function Home({ userObj }) {
   const [tweets, setTweets] = useState([]);
 
-  useEffect(async () => {
-    const tweetCollection = collection(db, "tweets");
-    const q = await query(tweetCollection, orderBy("createdAt", "desc"));
-    onSnapshot(q, (snapshot) => {
-      const tweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setTweets(tweetArray);
-    });
+  useEffect(() => {
+    async function getTweets() {
+      const tweetCollection = collection(db, "tweets");
+      const q = await query(tweetCollection, orderBy("createdAt", "desc"));
+      onSnapshot(q, (snapshot) => {
+        const tweetArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTweets(tweetArray);
+      });
+    }
+    getTweets();
   }, []);
 
   return (

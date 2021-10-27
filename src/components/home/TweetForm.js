@@ -101,7 +101,7 @@ export default function TweetForm({ userObj }) {
           </div>
           <div className="image-input__container">
             <div className="input-input-start">
-              <label for="image-input">
+              <label htmlFor="image-input">
                 <i className="fas fa-file-image image-input__icon"></i>
               </label>
               <input

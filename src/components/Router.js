@@ -4,36 +4,38 @@ import Home from "routes/Home";
 import NavBar from "./NavBar";
 import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NewUser from "routes/NewUser";
 import MadeWithLove from "./MadeWithLove";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       {isLoggedIn && <NavBar userObj={userObj} />}
       <Switch>
         {isLoggedIn ? (
-          <div className="main">
-            <div className="loggedin__container">
-              <Route exact path="/new-user">
-                <NewUser
-                  userObj={userObj}
-                  refreshDisplayName={refreshDisplayName}
-                />
-              </Route>
-              <Route exact path="/profile">
-                <Profile
-                  userObj={userObj}
-                  refreshDisplayName={refreshDisplayName}
-                />
-              </Route>
-              <Route exact path="/not-found" component={NotFound} />
-              <Route exact path="/">
-                <Home userObj={userObj} />
-              </Route>
+          <React.Fragment>
+            <div className="main">
+              <div className="loggedin__container">
+                <Route exact path="/new-user">
+                  <NewUser
+                    userObj={userObj}
+                    refreshDisplayName={refreshDisplayName}
+                  />
+                </Route>
+                <Route exact path="/profile">
+                  <Profile
+                    userObj={userObj}
+                    refreshDisplayName={refreshDisplayName}
+                  />
+                </Route>
+                <Route exact path="/not-found" component={NotFound} />
+                <Route exact path="/">
+                  <Home userObj={userObj} />
+                </Route>
+              </div>
             </div>
-          </div>
+          </React.Fragment>
         ) : (
           <div className="logged-out">
             <Route exact path="/not-found" component={NotFound} />
@@ -42,11 +44,13 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
         )}
       </Switch>
       {isLoggedIn && (
-        <div className="explore">
-          <MadeWithLove />
-        </div>
+        <React.Fragment>
+          <div className="explore">
+            <MadeWithLove />
+          </div>
+        </React.Fragment>
       )}
-    </Router>
+    </BrowserRouter>
   );
 };
 
