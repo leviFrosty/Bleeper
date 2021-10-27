@@ -10,7 +10,7 @@ import MadeWithLove from "./MadeWithLove";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       {isLoggedIn && <NavBar userObj={userObj} />}
       <Switch>
         {isLoggedIn ? (
