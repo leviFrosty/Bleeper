@@ -1,4 +1,4 @@
-![Bleeper Logo](/src/images/logo.webp)
+![Bleeper Logo](/public/favicon.ico)
 
 # Bleeper!
 
