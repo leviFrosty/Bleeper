@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/twitclone/static/css/main.cb64c12c.chunk.css",
-    "main.js": "/twitclone/static/js/main.9d5e3d7f.chunk.js",
-    "main.js.map": "/twitclone/static/js/main.9d5e3d7f.chunk.js.map",
-    "runtime-main.js": "/twitclone/static/js/runtime-main.bc60c75a.js",
-    "runtime-main.js.map": "/twitclone/static/js/runtime-main.bc60c75a.js.map",
-    "static/js/2.0dccac34.chunk.js": "/twitclone/static/js/2.0dccac34.chunk.js",
-    "static/js/2.0dccac34.chunk.js.map": "/twitclone/static/js/2.0dccac34.chunk.js.map",
-    "index.html": "/twitclone/index.html",
-    "static/css/main.cb64c12c.chunk.css.map": "/twitclone/static/css/main.cb64c12c.chunk.css.map",
-    "static/js/2.0dccac34.chunk.js.LICENSE.txt": "/twitclone/static/js/2.0dccac34.chunk.js.LICENSE.txt",
-    "static/media/google.9adf7ef7.png": "/twitclone/static/media/google.9adf7ef7.png",
-    "static/media/logo.25c6b790.webp": "/twitclone/static/media/logo.25c6b790.webp"
+    "main.css": "/levifrosty.github.io/twitClone/static/css/main.cb64c12c.chunk.css",
+    "main.js": "/levifrosty.github.io/twitClone/static/js/main.9382ddf4.chunk.js",
+    "main.js.map": "/levifrosty.github.io/twitClone/static/js/main.9382ddf4.chunk.js.map",
+    "runtime-main.js": "/levifrosty.github.io/twitClone/static/js/runtime-main.6a694f77.js",
+    "runtime-main.js.map": "/levifrosty.github.io/twitClone/static/js/runtime-main.6a694f77.js.map",
+    "static/js/2.19d71b62.chunk.js": "/levifrosty.github.io/twitClone/static/js/2.19d71b62.chunk.js",
+    "static/js/2.19d71b62.chunk.js.map": "/levifrosty.github.io/twitClone/static/js/2.19d71b62.chunk.js.map",
+    "index.html": "/levifrosty.github.io/twitClone/index.html",
+    "static/css/main.cb64c12c.chunk.css.map": "/levifrosty.github.io/twitClone/static/css/main.cb64c12c.chunk.css.map",
+    "static/js/2.19d71b62.chunk.js.LICENSE.txt": "/levifrosty.github.io/twitClone/static/js/2.19d71b62.chunk.js.LICENSE.txt",
+    "static/media/google.9adf7ef7.png": "/levifrosty.github.io/twitClone/static/media/google.9adf7ef7.png",
+    "static/media/logo.25c6b790.webp": "/levifrosty.github.io/twitClone/static/media/logo.25c6b790.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc60c75a.js",
-    "static/js/2.0dccac34.chunk.js",
+    "static/js/runtime-main.6a694f77.js",
+    "static/js/2.19d71b62.chunk.js",
     "static/css/main.cb64c12c.chunk.css",
-    "static/js/main.9d5e3d7f.chunk.js"
+    "static/js/main.9382ddf4.chunk.js"
   ]
 }
