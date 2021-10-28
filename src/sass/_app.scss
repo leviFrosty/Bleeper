@@ -3,6 +3,7 @@
   flex-direction: row;
   position: relative;
   width: 100vw;
+  overflow: hidden;
 }
 .App-Loading {
   justify-content: center;
@@ -10,4 +11,18 @@
 }
 .logged-out {
   width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .App {
+    flex-direction: column;
+  }
+  .nav {
+    position: unset;
+  }
+  .nav-container {
+    position: unset;
+    flex-direction: row;
+    height: auto;
+  }
 }

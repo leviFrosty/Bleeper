@@ -1,6 +1,6 @@
 import { collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { db } from "fbInstance";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import TweetCard from "components/home/TweetCard";
 import React, { useEffect } from "react";
 

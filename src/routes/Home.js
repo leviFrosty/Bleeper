@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "fbInstance";
 import TweetCard from "../components/home/TweetCard";
