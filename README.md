@@ -1,3 +1,5 @@
+![Bleeper Logo](/src/images/logo.webp)
+
 # Bleeper!
 
 The twitter clone made with React and Firebase.
@@ -30,3 +32,6 @@ The twitter clone made with React and Firebase.
 ##### Design Inspirations:
 
 - [Login Page](https://dribbble.com/shots/15392711/attachments/7157172?mode=media)
+
+Small note: Unfortunately, I have the Firebase secret available on this repo due
+to build issues I was having.
