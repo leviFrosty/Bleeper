@@ -9,7 +9,7 @@ The twitter clone made with React and Firebase.
 3. After cloning, type `cd twitClone`, then `npm i`
 4. Now view the page by running `npm start`
 
-##### Features:
+## Features:
 
 - 🔑 Authentication
   - Email/Password
@@ -21,7 +21,7 @@ The twitter clone made with React and Firebase.
 - 🏷️ Profile page
 - ➕👓✏️✖️ CRUD operations
 
-##### Made with:
+## Made with:
 
 - React
 - Firebase
@@ -29,4 +29,4 @@ The twitter clone made with React and Firebase.
 
 ##### Design Inspirations:
 
-- [Login](https://dribbble.com/shots/15392711/attachments/7157172?mode=media)
+- [Login Page](https://dribbble.com/shots/15392711/attachments/7157172?mode=media)
