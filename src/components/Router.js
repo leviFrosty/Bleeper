@@ -4,13 +4,13 @@ import Home from "routes/Home";
 import NavBar from "./NavBar";
 import NotFound from "routes/NotFound";
 import Profile from "routes/Profile";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import NewUser from "routes/NewUser";
 import MadeWithLove from "./MadeWithLove";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       {isLoggedIn && <NavBar userObj={userObj} />}
       <Switch>
         <React.Fragment>
@@ -52,7 +52,7 @@ const AppRouter = ({ isLoggedIn, userObj, refreshDisplayName }) => {
           </div>
         </React.Fragment>
       )}
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
