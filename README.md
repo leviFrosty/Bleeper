@@ -33,4 +33,4 @@ The twitter clone made with React and Firebase.
 
 - [Login Page](https://dribbble.com/shots/15392711/attachments/7157172?mode=media)
 
-Note: Due to build issues (and the fact this is just a learning project), I did not deploy this. Please run this application locally to view.
+Note: Due to build issues (and the fact this is just a learning project), I could not deploy this. Please run this application locally to view.
